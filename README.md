@@ -220,6 +220,22 @@ Properties should be camel-case with the leading word being lowercase. Use auto-
 id varnm;
 ```
 
+Declare properties readonly if they are only set once in -init. Always declare memory-management semantics even on readonly properties.
+
+Don't put a space between an object type and the protocol it conforms to.
+
+```objc
+@property (nonatomic, strong) NSObject<Protocol> *object;
+```
+
+Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
+
+C function declarations should have no space before the opening parenthesis, and should be namespaced just like a class.
+
+```objc
+void GHAwesomeFunction(BOOL hasSomeArgs);
+```
+
 ### Underscores
 
 When using properties, instance variables should always be accessed and mutated using `self.`. This means that all properties will be visually distinct, as they will all be prefaced with `self.`. 
