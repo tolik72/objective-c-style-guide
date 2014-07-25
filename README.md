@@ -30,6 +30,7 @@ Here are some of the documents from Apple that informed the style guide. If some
 * [Spacing](#spacing)
 * [Comments](#comments)
 * [Naming](#naming)
+  * [C functions](#c-functions)
   * [Underscores](#underscores)
 * [Methods](#methods)
 * [Variables](#variables)
