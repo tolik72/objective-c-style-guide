@@ -221,15 +221,19 @@ Properties should be camel-case with the leading word being lowercase. Use auto-
 id varnm;
 ```
 
-Declare properties readonly if they are only set once in -init. Always declare memory-management semantics even on readonly properties.
-
 Don't put a space between an object type and the protocol it conforms to.
 
+**Preferred:**
+
 ```objc
-@property (nonatomic, strong) NSObject<Protocol> *object;
+@property (strong, nonatomuc) NSObject<Protocol> *object;
 ```
 
-Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
+**Not Preferred:**
+
+```objc
+@property (strong, nonatomic) id <Protocol> *object;
+```
 
 ### C functions
 
@@ -332,6 +336,10 @@ Why? Even if you declared a property as `NSString` somebody might pass in an ins
 ```objc
 @property (strong, nonatomic) NSString *tutorialName;
 ```
+
+Always declare memory-management semantics even on readonly properties.
+
+Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
 
 ## Dot-Notation Syntax
 
