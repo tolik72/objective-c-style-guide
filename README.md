@@ -337,12 +337,14 @@ UIApplication.sharedApplication.delegate;
 ## Literals
 
 `NSString`, `NSDictionary`, `NSArray`, and `NSNumber` literals should be used whenever creating immutable instances of those objects. Pay special care that `nil` values can not be passed into `NSArray` and `NSDictionary` literals, as this will cause a crash.
+The contents of array and dictionary literals should have a space on both sides.
+Dictionary literals should have no space between the key and the colon, and a single space between colon and value.
 
 **Preferred:**
 
 ```objc
-NSArray *names = @[@"Brian", @"Matt", @"Chris", @"Alex", @"Steve", @"Paul"];
-NSDictionary *productManagers = @{@"iPhone": @"Kate", @"iPad": @"Kamal", @"Mobile Web": @"Bill"};
+NSArray *names = @[ @"Brian", @"Matt", @"Chris", @"Alex", @"Steve", @"Paul" ];
+NSDictionary *productManagers = @{ @"iPhone": @"Kate", @"iPad": @"Kamal", @"Mobile Web": @"Bill" };
 NSNumber *shouldUseLiterals = @YES;
 NSNumber *buildingStreetNumber = @10018;
 ```
@@ -354,6 +356,24 @@ NSArray *names = [NSArray arrayWithObjects:@"Brian", @"Matt", @"Chris", @"Alex",
 NSDictionary *productManagers = [NSDictionary dictionaryWithObjectsAndKeys: @"Kate", @"iPhone", @"Kamal", @"iPad", @"Bill", @"Mobile Web", nil];
 NSNumber *shouldUseLiterals = [NSNumber numberWithBool:YES];
 NSNumber *buildingStreetNumber = [NSNumber numberWithInteger:10018];
+```
+
+Longer or more complex literals should be split over multiple lines (optionally with a terminating comma):
+
+``` objc
+NSArray *theStuff = @[
+    @"Got some long string objects in here.",
+    [AndSomeModelObjects too],
+    @"Moar strings."
+];
+
+NSDictionary *keyedStuff = @{
+    @"this.key": @"corresponds to this value",
+    @"otherKey": @"remoteData.payload",
+    @"some": @"more",
+    @"JSON": @"keys",
+    @"and": @"stuff",
+};
 ```
 
 ## Constants
