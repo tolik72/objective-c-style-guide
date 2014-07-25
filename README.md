@@ -230,6 +230,8 @@ Don't put a space between an object type and the protocol it conforms to.
 
 Prefer exposing an immutable type for a property if it being mutable is an implementation detail. This is a valid reason to declare an ivar for a property.
 
+### C functions
+
 C function declarations should have no space before the opening parenthesis, and should be namespaced just like a class.
 
 ```objc
