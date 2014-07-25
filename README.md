@@ -337,8 +337,8 @@ UIApplication.sharedApplication.delegate;
 ## Literals
 
 `NSString`, `NSDictionary`, `NSArray`, and `NSNumber` literals should be used whenever creating immutable instances of those objects. Pay special care that `nil` values can not be passed into `NSArray` and `NSDictionary` literals, as this will cause a crash.
-The contents of array and dictionary literals should have a space on both sides.
-Dictionary literals should have no space between the key and the colon, and a single space between colon and value.
+
+The contents of array and dictionary literals should have a space on both sides. Dictionary literals should have no space between the key and the colon, and a single space between colon and value.
 
 **Preferred:**
 
